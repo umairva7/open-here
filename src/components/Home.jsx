@@ -1,8 +1,12 @@
 import React from "react";
+import Header from "./Header.jsx";
+import Footer from "./Footer.jsx";
+
 
 function Home() {
-  return (
+  return ( 
     <main>
+        <Header />
       <section className="container mx-auto py-24 px-4 text-center">
         <h1 className="text-4xl font-bold mb-4">Welcome to ModernApp</h1>
         <p className="max-w-2xl mx-auto text-lg text-muted mb-8">
@@ -49,6 +53,7 @@ function Home() {
           </div>
         </div>
       </section>
+        <Footer />
     </main>
   );
 }
