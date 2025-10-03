@@ -1,3 +1,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222 47% 11%;
+  --primary: 222 89% 53%;
+  --secondary: 210 40% 96%;
+  --muted: 210 16% 97%;
+  --accent: 162 78% 43%;
+  --destructive: 0 72% 51%;
+  --border: 220 13% 91%;
+  --input: 220 13% 91%;
+  --ring: 222 89% 53%;
+
+  --radius-lg: 1rem;
+  --radius-md: 0.5rem;
+  --radius-sm: 0.25rem;
+
+  --shadow-soft: 0 2px 8px 0 hsl(222 89% 53% / 0.06);
+  --shadow-medium: 0 4px 24px 0 hsl(222 89% 53% / 0.12);
+
+  --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark {
+  --background: 222 47% 11%;
+  --foreground: 0 0% 100%;
+  --primary: 222 89% 66%;
+  --secondary: 210 36% 22%;
+  --muted: 210 16% 24%;
+  --accent: 162 78% 43%;
+  --destructive: 0 72% 66%;
+  --border: 220 13% 18%;
+  --input: 220 13% 18%;
+  --ring: 222 89% 66%;
+}
