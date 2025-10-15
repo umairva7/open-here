@@ -8,7 +8,7 @@ export default function Navbar({ theme, setTheme }) {
   return (
     <nav className="flex items-center justify-between px-6 py-3 bg-gray-900 dark:bg-gray-900 bg-gray-100 border-b border-gray-800 shadow-sm">
       <div className="text-xl font-bold dark:text-white text-gray-900 tracking-wide">
-        My Diary
+        Open Here
       </div>
       <div className="flex items-center gap-3">
         <button

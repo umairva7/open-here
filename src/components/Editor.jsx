@@ -49,7 +49,7 @@ export default function Editor({ entry, onSave, onSummarize }) {
       <input
         className="bg-gray-900 border-b border-gray-700 p-3 text-xl text-white outline-none mb-4 rounded-xl focus:ring-2 focus:ring-blue-500 transition"
         type="text"
-        placeholder="Title (optional)"
+        placeholder="Title"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
