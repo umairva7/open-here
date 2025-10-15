@@ -1,17 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-function formatDateTime(isoString) {
-  const d = new Date(isoString);
-  const options = {
-    weekday: "short",
-    month: "short",
-    day: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-  };
-  return d.toLocaleString(undefined, options); //
-}
-
 export default function Editor({ entry, onSave, onSummarize }) {
   const [title, setTitle] = useState(entry?.title || "");
   const [content, setContent] = useState(entry?.content || "");
@@ -49,17 +37,13 @@ export default function Editor({ entry, onSave, onSummarize }) {
     }
   };
 
-  const displayDateTime = entry?.date
-    ? formatDateTime(entry.date)
-    : formatDateTime(now.toISOString());
-
   return (
-    <div className="flex flex-col h-full">
-      {/* Date/time: small, right-aligned, frosted glass pill */}
+    <div className="flex flex-col">
+      {/* Date/time display */}
       <div className="mb-2 flex">
         <span className="inline-flex items-center px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-gray-100/30 text-xs text-gray-300 font-medium shadow-sm">
           <span className="mr-2">{entry?.date ? "Saved" : "Now"}</span>
-          <span>{displayDateTime}</span>
+          <span>{now.toLocaleString()}</span>
         </span>
       </div>
       <input
@@ -74,7 +58,9 @@ export default function Editor({ entry, onSave, onSummarize }) {
         placeholder="Write your thoughts here..."
         value={content}
         onChange={(e) => setContent(e.target.value)}
+        style={{ minHeight: "120px" }}
       />
+      {/* Buttons are always visible */}
       <div className="flex gap-3 mb-4">
         <button
           onClick={handleSave}

@@ -1,18 +1,25 @@
 import React from "react";
 
-export default function Navbar() {
+export default function Navbar({ theme, setTheme }) {
+  const handleToggle = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
   return (
-    <nav className="flex items-center justify-between px-6 py-3 bg-gray-900 border-b border-gray-800 shadow-sm">
-      <div className="text-xl font-bold text-white tracking-wide">
+    <nav className="flex items-center justify-between px-6 py-3 bg-gray-900 dark:bg-gray-900 bg-gray-100 border-b border-gray-800 shadow-sm">
+      <div className="text-xl font-bold dark:text-white text-gray-900 tracking-wide">
         My Diary
       </div>
       <div className="flex items-center gap-3">
-        {/* Example extra nav actions */}
-        <button className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded transition text-sm">
-          Export
-        </button>
-        <button className="bg-gray-800 hover:bg-gray-700 text-gray-200 px-3 py-1 rounded transition text-sm">
-          Settings
+        <button
+          onClick={handleToggle}
+          className="flex items-center px-3 py-1 rounded transition text-sm bg-gray-800 dark:bg-gray-700 text-gray-200 dark:text-gray-300 hover:bg-blue-600 hover:text-white"
+          aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+        >
+          <span className="mr-2">
+            {theme === "dark" ? "🌙" : "☀️"}
+          </span>
+          {theme === "dark" ? "Dark" : "Light"}
         </button>
       </div>
     </nav>
